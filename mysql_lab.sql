@@ -1,14 +1,15 @@
 --
--- table structure for table books
---
-create table books(accno int primary key auto_increment, title varchar(100) unique not null, author varchar(50) not null, price float(6,2), type enum('lending','reference'), availability enum('yes','no'), publisherid int); 
-alter table books add constraint books_fkey_publisherid foreign key(publisherid) references publishers(publisherid);
-
---
 -- table structure for table publishers
 --
 
 create table publishers(publisherid int primary key auto_increment, name varchar(50) unique not null, address varchar(100)); 
+
+--
+-- table structure for table books
+--
+
+create table books(accno int primary key auto_increment, title varchar(100) unique not null, author varchar(50) not null, price float(6,2), type enum('lending','reference'), availability enum('yes','no'), publisherid int); 
+alter table books add constraint books_fkey_publisherid foreign key(publisherid) references publishers(publisherid);
 
 --
 -- table structure for table members
