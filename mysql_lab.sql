@@ -105,7 +105,7 @@ select * from books where type = 'lending' and availability = 'yes';
 select b.title, b.author, p.name from books b join publishers p on b.publisherid = p.publisherid;
 
 --Retrieve members who issued books with their name, address, and corresponding book titles in ascending order of title.
-Retrieve the name, total number of books
+
 select m.name, m.address, b.title from members m join issues i on m.memberid = i.memberid join books b on i.accno = b.accno order by b.title asc;
 
 --Retrieve the name, total number of books (rename it as TotalBooksIssued) issued by each member.
